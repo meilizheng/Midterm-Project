@@ -24,33 +24,33 @@ namespace Midterm_Project
         {
             InitializeComponent();
 
-            PopulateSizeComboBox();
+            PopulateSizeComboBox();  //populate size
 
-            DataBind();
+            DataBind(); //bind data;
 
            
         }
 
-        void DataBind()
+        void DataBind() //call static class to display data 
         {
             lbProductInfor.ItemsSource = Data.ProductCollection;
         }
 
 
-        public void btnCoffee_Click(object sender, RoutedEventArgs e)
+        public void btnCoffee_Click(object sender, RoutedEventArgs e) //add coffee to product collection;
         {            
             Coffee coffee = new Coffee(txtName.Text, double.Parse(txtPrice.Text), double.Parse(txtPoints.Text), (Drink.Size)Enum.Parse(typeof(Drink.Size), cbSize.SelectedValue.ToString()), txtRoastOrTea.Text);
 
             Data.ProductCollection.Add(coffee);
         }
 
-        private void btnTea_Click(object sender, RoutedEventArgs e)
+        private void btnTea_Click(object sender, RoutedEventArgs e) //add tea to product collection;
         {
             Tea tea = new Tea(txtName.Text, double.Parse(txtPrice.Text), double.Parse(txtPoints.Text), (Drink.Size)Enum.Parse(typeof(Drink.Size), cbSize.SelectedValue.ToString()), txtRoastOrTea.Text);
             Data.ProductCollection.Add(tea);
         }
 
-        private void btnBreakfast_Click(object sender, RoutedEventArgs e)
+        private void btnBreakfast_Click(object sender, RoutedEventArgs e) //if the check box has been check add it to product collection;
         {
             if (ckIsHeated.IsChecked.Value && ckHasDairy.IsChecked.Value)
             {
@@ -69,7 +69,7 @@ namespace Midterm_Project
             }
         }
 
-        public void PopulateSizeComboBox()
+        public void PopulateSizeComboBox() 
         {
             cbSize.Items.Add("Short");
             cbSize.Items.Add("Tall");
@@ -79,7 +79,7 @@ namespace Midterm_Project
             cbSize.SelectedIndex = 0;
         }
 
-        private void btnlunch_Click(object sender, RoutedEventArgs e)
+        private void btnlunch_Click(object sender, RoutedEventArgs e) //if the check box has been check add it to product collection;
         {
             if (ckIsHeated.IsChecked.Value && ckHasDairy.IsChecked.Value)
             {
@@ -98,19 +98,19 @@ namespace Midterm_Project
             }
         }
 
-        private void btnTumbler_Click(object sender, RoutedEventArgs e)
+        private void btnTumbler_Click(object sender, RoutedEventArgs e) //add tumblers to product collection;
         {
             Tumblers tumblers = new Tumblers(txtName.Text, double.Parse(txtPrice.Text), double.Parse(txtPoints.Text), txtColorOrStyle.Text);
             Data.ProductCollection.Add(tumblers);
         }
 
-        private void btnMug_Click(object sender, RoutedEventArgs e)
+        private void btnMug_Click(object sender, RoutedEventArgs e) //add mug to product collection;
         {
             Mugs mug = new Mugs(txtName.Text, double.Parse(txtPrice.Text), double.Parse(txtPoints.Text), txtColorOrStyle.Text);
             Data.ProductCollection.Add(mug);
         }
 
-        public void btnGiftCard_Click(object sender, RoutedEventArgs e)
+        public void btnGiftCard_Click(object sender, RoutedEventArgs e) //add gift card to producto collection;
         {
             GiftCard gift = new GiftCard(txtName.Text, double.Parse(txtPrice.Text), double.Parse(txtPoints.Text), double.Parse(txtPoints.Text));
             Data.ProductCollection.Add(gift);

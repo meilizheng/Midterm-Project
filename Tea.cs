@@ -6,15 +6,15 @@ using System.Threading.Tasks;
 
 namespace Midterm_Project
 {
-    class Tea : Drink
+    class Tea : Drink //creat tea class based on parent class;
     {
-        string TypeOfTea;
-        public Tea(string name, double price, double points, Size size, string typeOfTea) : base(name, price, points, size)
+        string TypeOfTea; //add new field;
+        public Tea(string name, double price, double points, Size size, string typeOfTea) : base(name, price, points, size) //creat a constructor based on parent class
         {
             TypeOfTea = typeOfTea;
         }
 
-        public override string ToString()
+        public override string ToString()  //use override to display information;
         {
             return base.ToString() + $"{TypeOfTea}";
         }

@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Midterm_Project
 {
-    abstract class Merchandise : Product
+    abstract class Merchandise : Product  //create a merchandiese based on parent class;
     {
-        public Merchandise(string name, double price, double points) : base(name, price, points)
+        public Merchandise(string name, double price, double points) : base(name, price, points) //creatd constructor based on parent class;
         {
         }
     }

@@ -7,16 +7,16 @@ using System.Threading.Tasks;
 
 namespace Midterm_Project
 {
-    class Data
+    static class Data //creat a static class 
     {
-        static ObservableCollection<Member> memberCollection;
-        static ObservableCollection<Product> productCollection;
+        static ObservableCollection<Member> memberCollection;  //created a observable collection for member collection;
+        static ObservableCollection<Product> productCollection; //created a observable collection for product collection;
         static Product currentProduct;
         static Member currentMember;
 
-        static Data()
+        static Data() //created a static constructor;
         {
-            memberCollection = new ObservableCollection<Member>();
+            memberCollection = new ObservableCollection<Member>(); 
             productCollection = new ObservableCollection<Product>();
         }
 
@@ -25,17 +25,17 @@ namespace Midterm_Project
         public static Product CurrentProduct { get { return currentProduct; } }
         public static Member CurrentMember { get { return currentMember; } }
 
-        public static void AddProductToCollection(Product product)
+        public static void AddProductToCollection(Product product) //created a method add product;
         {
             productCollection.Add(product);
         }
 
-        public static void AddMemberToCollection(Member member)
+        public static void AddMemberToCollection(Member member)  //created a method add member;
         {
             memberCollection.Add(member);
         }
 
-        public static void UpdateCurrentProduct(Product product)
+        public static void UpdateCurrentProduct(Product product) 
         {
             currentProduct = product;
         }

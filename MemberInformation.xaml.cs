@@ -19,9 +19,9 @@ namespace Midterm_Project
     /// <summary>
     /// Interaction logic for MemberInformation.xaml
     /// </summary>
-    public partial class MemberInformation : Window
+    public partial class MemberInformation : Window  //created a MemberInformation class base on window;
     {
-        public MemberInformation()
+        public MemberInformation()   //creat method to call the method;
         {
             InitializeComponent();
             DataBind();
@@ -29,17 +29,17 @@ namespace Midterm_Project
             //lbTransactionInfor1.Items.Add(Window.lbTrans)
         }
 
-        void DataBind()
+        void DataBind()  //created a method to bind the data;
         {
             lbMemberInformation.ItemsSource = Data.MemberCollection;
            
         }
 
-        public void btnAddMember_Click(object sender, RoutedEventArgs e)
+        public void btnAddMember_Click(object sender, RoutedEventArgs e)  //a event;
         {
             Member m = null;            
 
-            if (rbRegular.IsChecked.HasValue && rbRegular.IsChecked.Value)
+            if (rbRegular.IsChecked.HasValue && rbRegular.IsChecked.Value)  //if the check box checked add the information to member collection;
             {
                 m = new RegularMember(txtFirstName.Text, txtLastname.Text);
             }
@@ -51,7 +51,7 @@ namespace Midterm_Project
             Data.MemberCollection.Add(m);
         }
 
-        private void lbMemberInformation_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void lbMemberInformation_SelectionChanged(object sender, SelectionChangedEventArgs e) //if member has been selected. display the member's previous transaction;
         {
             Member selectedMemember = (Member)lbMemberInformation.SelectedItem;
             lbTransactionInfor1.ItemsSource = selectedMemember.PreviousTransactions;

@@ -21,7 +21,7 @@ namespace Midterm_Project
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class MainWindow : Window  //Main Window;
     {      
         public MainWindow()
         {
@@ -29,13 +29,13 @@ namespace Midterm_Project
             BindData();
         }
 
-        void BindData()
+        void BindData()  //created a method all the static class to disply the information in different place 
         {
             cbMemberInfo.ItemsSource = Data.MemberCollection;
             lbProductsInfo.ItemsSource = Data.ProductCollection;
         }
 
-        public void btnAddProducts_Click(object sender, RoutedEventArgs e)
+        public void btnAddProducts_Click(object sender, RoutedEventArgs e) //open new window;
         {
             AddNewProducts addnewproducts = new AddNewProducts();
             if (addnewproducts.ShowDialog() == true)
@@ -44,7 +44,7 @@ namespace Midterm_Project
             }
         }
 
-        public void btnMemberInfor_Click(object sender, RoutedEventArgs e)
+        public void btnMemberInfor_Click(object sender, RoutedEventArgs e) //open new window;
         {
             MemberInformation addMemberWindow = new MemberInformation();            
 
@@ -54,7 +54,7 @@ namespace Midterm_Project
             }
         }
 
-        private void btnBuyProducts_Click(object sender, RoutedEventArgs e)
+        private void btnBuyProducts_Click(object sender, RoutedEventArgs e) //a event when you select the member add member's previos transaction points;
         {
             Member selectedMemember = (Member)cbMemberInfo.SelectedItem;
             selectedMemember.AddProduct((Product)lbProductsInfo.SelectedItem);
@@ -64,7 +64,7 @@ namespace Midterm_Project
             txtUserPoints.Text = selectedMemember.PointAmount.ToString();
         }
 
-        private void btnUsePoints_Click(object sender, RoutedEventArgs e)
+        private void btnUsePoints_Click(object sender, RoutedEventArgs e) //deduct the points from the total points;
         {            
             Member selectedMemember = (Member)cbMemberInfo.SelectedItem;
             Product productToBuy = (Product)lbProductsInfo.SelectedItem;
@@ -74,7 +74,7 @@ namespace Midterm_Project
             txtUserPoints.Text = selectedMemember.PointAmount.ToString();
         }
 
-        private void cbMemberInfo_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void cbMemberInfo_SelectionChanged(object sender, SelectionChangedEventArgs e) 
         {
             Member selectedMemember = (Member)cbMemberInfo.SelectedItem;
             lbMemberTransations.ItemsSource = selectedMemember.PreviousTransactions;
