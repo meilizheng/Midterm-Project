@@ -5,8 +5,19 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Midterm_Project"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
+        Title="MainWindow" Height="480" Width="865">
+    <Canvas Background="#FFD8C9EC">
+        <ListBox x:Name="lbDisplay" Height="340" Canvas.Left="10" Canvas.Top="34" Width="200" d:ItemsSource="{d:SampleData ItemCount=5}"/>
+        <Label x:Name="lbProducts" Content="Products" Height="25" Canvas.Left="309" Width="76" Background="#FFD8C9EC" Canvas.Top="10" FontSize="14" FontWeight="Bold" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+        <ListBox x:Name="lbProductsInfo" Height="339" Canvas.Left="235" Canvas.Top="34" Width="245" d:ItemsSource="{d:SampleData ItemCount=5}"/>
+        <ComboBox x:Name="cbMemberInfo" Height="24" Canvas.Left="540" Canvas.Top="51" Width="185" HorizontalAlignment="Center" VerticalAlignment="Top" SelectionChanged="cbMemberInfo_SelectionChanged"/>
+        <ListBox x:Name="lbMemberTransations" Height="289" Canvas.Left="515" Canvas.Top="84" Width="240" d:ItemsSource="{d:SampleData ItemCount=5}"/>
+        <Button x:Name="btnAddProducts" Content="Add New Products" Height="30" Canvas.Left="10" Canvas.Top="394" Width="200" Click="btnAddProducts_Click"/>
+        <Button x:Name="btnBuyProducts" Content="Buy" Height="30" Canvas.Left="235" Canvas.Top="394" Width="112" Click="btnBuyProducts_Click"/>
+        <Button x:Name="btnUsePoints" Content="Use Rewards" Height="30" Canvas.Left="370" Canvas.Top="394" Width="110" Click="btnUsePoints_Click"/>
+        <Label x:Name="lbUserPoints" Content="User Points: " Height="30" Canvas.Left="515" Canvas.Top="391" Width="75" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtUserPoints" Height="30" Canvas.Left="590" TextWrapping="Wrap" Canvas.Top="391" Width="75" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <Button x:Name="btnMemberInfor" Content="Member Information" Height="25" Canvas.Left="540" Canvas.Top="10" Width="185" Click="btnMemberInfor_Click"/>
 
-    </Grid>
+    </Canvas>
 </Window>

@@ -1,0 +1,42 @@
+﻿<Window x:Class="Midterm_Project.AddNewProducts"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Midterm_Project"
+        mc:Ignorable="d"
+        Title="Add_New_Products" Height="750" Width="800">
+    <Canvas Background="#FF5DA99A">
+        <Label x:Name="lbName" Content="Name" Height="25" Canvas.Left="10" Canvas.Top="19" Width="90" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtName" Height="30" Canvas.Left="10" TextWrapping="Wrap" Canvas.Top="49" Width="245" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+        <Label x:Name="lbPrice" Content="Price" Height="25" Canvas.Left="10" Canvas.Top="84" Width="90" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtPrice" Height="30" Canvas.Left="10" TextWrapping="Wrap" Canvas.Top="114" Width="245" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+        <Label x:Name="lbPionts" Content="Points" Height="25" Canvas.Left="10" Canvas.Top="144" Width="90" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtPoints" Height="30" Canvas.Left="10" TextWrapping="Wrap" Canvas.Top="174" Width="245" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+        <Canvas Height="137" Canvas.Left="10" Canvas.Top="216" Width="250" Background="#FF479484" HorizontalAlignment="Center" VerticalAlignment="Top">
+            <ComboBox x:Name="cbSize" Height="25" Canvas.Left="83" Canvas.Top="13" Width="157" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+            <Label x:Name="lbDrinkType" Content="Roast or Tea" Height="28" Canvas.Top="49" Width="75" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+            <TextBox x:Name="txtRoastOrTea" Height="28" Canvas.Left="83" TextWrapping="Wrap" Canvas.Top="50" Width="157" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+            <Button x:Name="btnCoffee" Content="Coffee" Height="30" Canvas.Top="90" Width="110" HorizontalAlignment="Center" VerticalAlignment="Top" Click="btnCoffee_Click"/>
+            <Button x:Name="btnTea" Content="Tea" Height="30" Canvas.Left="125" Canvas.Top="90" Width="115" HorizontalAlignment="Center" VerticalAlignment="Top" Click="btnTea_Click"/>
+        </Canvas>
+        <Label x:Name="lbSize" Content="Size" Height="30" Canvas.Left="10" Canvas.Top="240" Width="78" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <Canvas Height="115" Canvas.Left="10" Canvas.Top="369" Width="250" Background="#FF479484" HorizontalAlignment="Center" VerticalAlignment="Top">
+            <CheckBox x:Name="ckIsHeated" Content="Is Heated" Canvas.Left="20" Canvas.Top="15"/>
+            <CheckBox x:Name="ckHasDairy" Content="Has Dairy or Combo" Canvas.Left="20" Canvas.Top="35"/>
+            <Button x:Name="btnBreakfast" Content="breakfast" Height="28" Canvas.Top="69" Width="108" HorizontalAlignment="Center" VerticalAlignment="Top" Canvas.Left="2" Click="btnBreakfast_Click"/>
+            <Button x:Name="btnlunch" Content="lunch" Height="28" Canvas.Left="127" Canvas.Top="68" Width="115" HorizontalAlignment="Left" VerticalAlignment="Center" Click="btnlunch_Click"/>
+        </Canvas>
+        <Canvas Height="105" Canvas.Left="10" Canvas.Top="504" Width="250" Background="#FF479484" HorizontalAlignment="Center" VerticalAlignment="Top">
+            <Label x:Name="lbColorStyle" Content="Color Or Style" Height="25" Canvas.Left="3" Canvas.Top="15" Width="110" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+            <TextBox x:Name="txtColorOrStyle" Height="30" Canvas.Left="127" TextWrapping="Wrap" Canvas.Top="10" Width="115" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+            <Button x:Name="btnTumbler" Content="Tumbler" Canvas.Top="58" HorizontalAlignment="Left" VerticalAlignment="Center" Width="117" Height="34" Canvas.Left="2" Click="btnTumbler_Click"/>
+            <Button x:Name="btnMug" Content="Mug" Height="34" Canvas.Left="128" Canvas.Top="58" Width="115" HorizontalAlignment="Left" VerticalAlignment="Center" Click="btnMug_Click"/>
+        </Canvas>
+        <Canvas Height="75" Canvas.Left="10" Canvas.Top="639" Width="250" Background="#FF479484" HorizontalAlignment="Center" VerticalAlignment="Top">
+            <Button x:Name="btnGiftCard" Content="gift card" Height="35" Canvas.Left="39" Canvas.Top="23" Width="161" HorizontalAlignment="Center" VerticalAlignment="Top" Click="btnGiftCard_Click"/>
+        </Canvas>
+        <ListBox x:Name="lbProductInfor" Height="665" Canvas.Left="300" Canvas.Top="49" Width="465" d:ItemsSource="{d:SampleData ItemCount=5}"/>
+
+    </Canvas>
+</Window>
